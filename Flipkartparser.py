@@ -49,3 +49,5 @@ for container in containers:
             final_rating="Not Rated"
         f.write(str(product_name).replace(",", "|") + "," + final_price + "," + final_rating + "," + link + "\n")
 f.close()
+from subprocess import Popen
+p = Popen(filename, shell=True) #auto open the csv file in Microsoft Excel as process finishes
