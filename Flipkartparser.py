@@ -44,10 +44,10 @@ for container in containers:
             rating = rating_container[i].text
             split_rating = rating.split(" ")
             split_rating = split_rating[0].split("(")
-            final_rating = split_rating[0]
+            final_rating = split_rating[0].split(",")
         except:
             final_rating="Not Rated"
-        f.write(str(product_name).replace(",", "|") + "," + final_price + "," + final_rating + "," + link + "\n")
+        f.write(str(product_name).replace(",", "|") + "," + final_price + "," + final_rating[0] + "," + link + "\n")
 f.close()
 from subprocess import Popen
-p = Popen(filename, shell=True) #auto open the csv file in Microsoft Excel as process finishes
+p = Popen(filename, shell=True)
