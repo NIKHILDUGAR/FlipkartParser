@@ -30,7 +30,7 @@ for container in containers:
     rating_container = container.findAll("div", {"class": "niH0FQ"})
     for i in range(len(price_container)):
         try:
-            product_name =name_container1[i]
+            product_name =name_container1[i].text
         except:
             product_name = name_container2[i].img['alt']
         link=str("https://www.flipkart.com"+link_container1[i])
