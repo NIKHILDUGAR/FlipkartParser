@@ -3,18 +3,7 @@ prints the URL of that product. Then makes a .csv file of the same name as the i
 with the entities of flipkart's first page below it. Note- In case you want to verify if what was parsed is correct by opening the URL
 use incognito browser so your cache and your history doesn't affect the findings of the page.
 '''
-from bs4 import BeautifulSoup as soup
-from urllib.request import urlopen as uReq
-sear=str(input("What do you want to search for on Flipkart?"))
-my_url= (f'https://www.flipkart.com/search?q={sear.replace(" ","+")}')
-print(my_url)
-uClient = uReq(my_url)
-page = uClient.read()
-uClient.close()
-page_soup = soup(page, "lxml")
-containers = page_soup.findAll("div", {"class": "_3O0U0u"})
-filename = f"{sear}.csv"
-f = open(filename, "w")
+
 from bs4 import BeautifulSoup as soup
 from urllib.request import urlopen as uReq
 sear=str(input("What do you want to search for on Flipkart?")).strip()
