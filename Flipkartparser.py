@@ -46,10 +46,10 @@ for container in containers:
             split_rating = rating.split(" ")
             split_rating = split_rating[0].split("(")
             final_rating = split_rating[0].split(",")
-            f.write(str(product_name).replace(",", "|") + "," + final_price + "," + final_rating[0] + "," + link + "\n")
+            f.write(str(product_name).replace(",", "|") + "," + final_price + "," + final_rating[0] + "," + f'=HYPERLINK("{str(str(link).strip())}")' + "\n")
         except:
             final_rating="Not Rated"
-        f.write(str(product_name).replace(",", "|") + "," + final_price + "," + str(final_rating) + "," + link + "\n")
+        f.write(str(product_name).replace(",", "|") + "," + final_price + "," + str(final_rating) + "," +f'=HYPERLINK("{str(str(link).strip())}")'+ "\n")
 f.close()
 from subprocess import Popen
 p = Popen(filename, shell=True)
